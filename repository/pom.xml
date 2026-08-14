@@ -37,17 +37,17 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>compile-java9</id>
+						<id>compile-java11</id>
 						<phase>process-classes</phase>
 						<goals>
 							<goal>compile</goal>
 						</goals>
 						<configuration>
-							<release>9</release>
+							<release>11</release>
 							<compileSourceRoots>
-								<compileSourceRoot>${project.basedir}/src/main/java9</compileSourceRoot>
+								<compileSourceRoot>${project.basedir}/src/main/java11</compileSourceRoot>
 							</compileSourceRoots>
-							<outputDirectory>${project.build.outputDirectory}/META-INF/versions/9</outputDirectory>
+							<outputDirectory>${project.build.outputDirectory}/META-INF/versions/11</outputDirectory>
 							<compilerArgs>
 								<arg>--patch-module</arg>
 								<arg>orchestra.repository=${project.build.outputDirectory}</arg>

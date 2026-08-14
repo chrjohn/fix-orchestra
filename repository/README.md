@@ -12,11 +12,11 @@ In addition to providing the XML schema as a resource, this module builds Java b
 
 ## Build
 
-This Maven module builds a multi-release jar (MRJAR) so it will run with either Java 8, prior to the introduction of the Java Package Module System (JPMS), or with modules in Java 11 or later. Building the MRJAR requires the presence of two Java Development Kits (JDK), but usage of it only requires a Java runtime version of choice.
+This Maven module builds a multi-release jar (MRJAR) so it will run with either Java 8, prior to the introduction of the Java Package Module System (JPMS), or with modules in Java 11 or later. The main classes are compiled with Java 8 bytecode compatibility. The Java module descriptor (`module-info.java`) is compiled separately with Java 11 and placed under `META-INF/versions/11/` in the JAR, so it is only activated on Java 11+. Building the MRJAR requires a JDK 11 or later toolchain, but the produced artifact runs on any Java 8 or later runtime.
 
 ### Java module
 
-For use with Java 11 or later, the name of the produced Java module is `orchestra.repository`. See module-info.java for the full specification of dependencies and exposed packages.
+For use with Java 11 or later, the name of the produced Java module is `orchestra.repository`. See `src/main/java11/module-info.java` for the full specification of dependencies and exposed packages.
 
 ### Maven dependency
 
